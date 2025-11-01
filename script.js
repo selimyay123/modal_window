@@ -27,3 +27,19 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
 btnCloseModal.addEventListener('click', closeModal);
 
 overlay.addEventListener('click', closeModal);
+
+/* 
+  how to respond to keyboard events
+  for that, we still need to use event listeners
+  keyboard events are so-called global events
+  keydown, keypress and keyup
+  keydown => tuşa basar basmaz,
+  keypress => tuşa basılı tutulduğunda,
+  keyup => tuşa basılıp bırakıldığında
+  tetiklenir.
+*/
+
+document.addEventListener('keydown', function (e) {
+  console.log(e.key);
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+});
